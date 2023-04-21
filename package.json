@@ -3,12 +3,15 @@
     "scripts": {
         "dev": "vite",
         "build": "vite build",
-        "run:dev": "concurrently -n Server,Vite \"php artisan serve\" \"yarn dev\" "
+        "run:dev": "concurrently -n Server,Vite \"php artisan serve\" \"yarn dev\""
     },
     "devDependencies": {
+        "autoprefixer": "^10.4.14",
         "axios": "^1.1.2",
         "concurrently": "^8.0.1",
         "laravel-vite-plugin": "^0.7.2",
+        "postcss": "^8.4.23",
+        "tailwindcss": "^3.3.1",
         "vite": "^4.0.0"
     }
 }
