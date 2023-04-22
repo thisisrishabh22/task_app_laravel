@@ -41,14 +41,7 @@ class TaskController extends Controller
             'date' => 'required',
         ]);
 
-        Task::create([
-            'name' => $request->name,
-            'description' => $request->description,
-            'start_time' => $request->start_time,
-            'end_time' => $request->end_time,
-            'date' => $request->date,
-            'user_id' => auth()->user()->id,
-        ]);
+        Task::create($request->all());
 
         return redirect()->route('tasks.index')->with('success', 'Task created successfully.');
     }
@@ -78,7 +71,20 @@ class TaskController extends Controller
      */
     public function update(UpdateTaskRequest $request, Task $task)
     {
+        $request->request->add(['is_completed' => $request->input('is_completed') ? true : false]);
         //
+        $request->validate([
+            'name' => 'required|string',
+            'description' => 'required|string',
+            'start_time' => 'required',
+            'end_time' => 'required',
+            'date' => 'required',
+            // 'is_completed' => 'required|boolean',
+        ]);
+
+        $task->update($request->all());
+
+        return redirect()->route('tasks.show', $task->id)->with('success', 'Task created successfully.');
     }
 
     /**

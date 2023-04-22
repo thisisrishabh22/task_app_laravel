@@ -33,9 +33,7 @@
                                 {{ $task->name }}
                             </h5>
                         </a>
-                        <p class="font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise
-                            technology acquisitions of 2021 so far, in reverse chronological order.
-                        </p>
+                        <p class="font-normal text-gray-700 dark:text-gray-400">{{ $task->description }}</p>
                         <p class="font-normal text-gray-700 dark:text-gray-400">
                             {{ 'Start Time: ' . $task->start_time->format('H:i:s A') }}
                             <br />
