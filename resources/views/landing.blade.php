@@ -54,7 +54,7 @@
             <div class="flex justify-center">
             </div>
 
-            <div class="flex justify-evenly items-center">
+            <div class="flex flex-col-reverse md:flex-row justify-evenly items-center">
                 <div class="flex flex-col justify-between items-start">
                     <h2 class="text-gray-900 dark:text-gray-100 text-3xl my-2">Simplify task management and prioritize
                         your
@@ -72,7 +72,7 @@
                         </x-primary-button>
                     </a>
                 </div>
-                <div class="flex justify-center items-center">
+                <div class="flex justify-center items-center mb-8 md:mb-0">
                     <img class="w-[80%]" src="{{ asset('img/landing/hero-image.webp') }}" alt="Task App Demo">
                 </div>
             </div>
@@ -84,20 +84,20 @@
                         and
                         customer satisfaction, according to IDC¹.</p>
                 </div>
-                <div class="flex justify-center items-start mt-4">
+                <div class="flex flex-col-reverse md:flex-row justify-center items-start mt-4">
 
-                    <div class="text-center mx-4">
+                    <div class="text-center mx-4 my-3 md:my-0">
                         <h4 class="text-gray-900 dark:text-gray-100 text-7xl my-2 font-extralight">42%</h4>
                         <p class="text-gray-700 dark:text-gray-300 text-sm my-2">faster execution of business processes
                         </p>
                     </div>
 
-                    <div class="text-center mx-4">
+                    <div class="text-center mx-4 my-3 md:my-0">
                         <h4 class="text-gray-900 dark:text-gray-100 text-7xl my-2 font-extralight">40%</h4>
                         <p class="text-gray-700 dark:text-gray-300 text-sm my-2">more business processes completed</p>
                     </div>
 
-                    <div class="text-center mx-4">
+                    <div class="text-center mx-4 my-3 md:my-0">
                         <h4 class="text-gray-900 dark:text-gray-100 text-7xl my-2 font-extralight">72%</h4>
                         <p class="text-gray-700 dark:text-gray-300 text-sm my-2">improvement in employee satisfaction
                         </p>
