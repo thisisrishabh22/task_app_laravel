@@ -54,11 +54,12 @@
 
                         <div class="flex flex-col my-2 w-full">
                             <label class="text-gray-900 dark:text-gray-100 text-md mb-2">Date</label>
-                            <div class="flex">
+                            <div class="flex items-center">
                                 <input type="checkbox" name="is_completed" id="is_completed" placeholder="Date"
                                     class="border-2 border-gray-300 p-2 rounded-lg"
                                     {{ $task->is_completed ? 'checked="checked"' : '' }} />
-                                <label for="is_completed">Completed</label>
+                                <label for="is_completed" class="ml-4 text-lg text-gray-900 dark:text-gray-100">Task
+                                    Completed</label>
                             </div>
                         </div>
 

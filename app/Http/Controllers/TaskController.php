@@ -32,6 +32,7 @@ class TaskController extends Controller
      */
     public function store(StoreTaskRequest $request)
     {
+        $request->request->add(['user_id' => auth()->user()->id]);
         //
         $request->validate([
             'name' => 'required|string',
@@ -79,12 +80,11 @@ class TaskController extends Controller
             'start_time' => 'required',
             'end_time' => 'required',
             'date' => 'required',
-            // 'is_completed' => 'required|boolean',
         ]);
 
         $task->update($request->all());
 
-        return redirect()->route('tasks.show', $task->id)->with('success', 'Task created successfully.');
+        return redirect()->route('tasks.show', $task->id)->with('success', 'Task updated successfully.');
     }
 
     /**
