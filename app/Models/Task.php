@@ -9,8 +9,6 @@ class Task extends Model
 {
     use HasFactory;
 
-    public const TABLE = 'tasks';
-
     /**
      * The attributes that are mass assignable.
      *

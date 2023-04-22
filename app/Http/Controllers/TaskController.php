@@ -13,7 +13,9 @@ class TaskController extends Controller
      */
     public function index()
     {
-        //
+        $tasks = auth()->user()->tasks()->orderBy('created_at', 'desc')->get();
+
+        return view('tasks.index')->with('tasks', $tasks);
     }
 
     /**
@@ -22,6 +24,7 @@ class TaskController extends Controller
     public function create()
     {
         //
+        return view('tasks.create');
     }
 
     /**
@@ -30,6 +33,24 @@ class TaskController extends Controller
     public function store(StoreTaskRequest $request)
     {
         //
+        $request->validate([
+            'name' => 'required|string',
+            'description' => 'required|string',
+            'start_time' => 'required',
+            'end_time' => 'required',
+            'date' => 'required',
+        ]);
+
+        Task::create([
+            'name' => $request->name,
+            'description' => $request->description,
+            'start_time' => $request->start_time,
+            'end_time' => $request->end_time,
+            'date' => $request->date,
+            'user_id' => auth()->user()->id,
+        ]);
+
+        return redirect()->route('tasks.index')->with('success', 'Task created successfully.');
     }
 
     /**
@@ -38,6 +59,8 @@ class TaskController extends Controller
     public function show(Task $task)
     {
         //
+
+        return view('tasks.show')->with('task', $task);
     }
 
     /**
@@ -46,6 +69,8 @@ class TaskController extends Controller
     public function edit(Task $task)
     {
         //
+
+        return view('tasks.edit')->with('task', $task);
     }
 
     /**

@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Dashboard') }}
+            {{ __('Edit Task') }}
         </h2>
     </x-slot>
 
@@ -13,12 +13,12 @@
                     <p class="my-2 md:my-0">
                         {{ count($tasks) === 0 ? __('Woohoo!! There are no tasks for today!') : __('You have :count tasks for today!', ['count' => count($tasks)]) }}
                     </p>
-                    <a href="{{ route('tasks.create') }}">
-                        <x-primary-button class="my-2 md:my-0">
-                            {{-- <a href="/"> --}}
+                    <x-primary-button class="my-2 md:my-0">
+                        {{-- <a href="{{ route('tasks.create') }}"> --}}
+                        <a href="/">
                             {{ __('Create Task') }}
-                        </x-primary-button>
-                    </a>
+                        </a>
+                    </x-primary-button>
                 </div>
             </div>
         </div>
